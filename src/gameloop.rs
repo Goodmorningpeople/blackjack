@@ -146,7 +146,7 @@ pub fn round(bet: i32, rounds: i32) {
                 println!("");
 
                 if bet != 0 {
-                    println!("You made ${}, three times your original bet!", bet * 3);
+                    println!("You made ${}!", bet * 3);
                 }
             }
             // if you lose

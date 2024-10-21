@@ -13,7 +13,7 @@ pub fn match_play(play_args: Option<&ArgMatches>) {
             if let Some(round_option) = args.get_one::<i32>("round-option") {
                 rounds = *round_option;
             } 
-            round(bet, rounds);
+            round(bet / rounds, rounds);
         }
         None => {}
     }
