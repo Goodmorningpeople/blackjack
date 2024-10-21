@@ -74,6 +74,7 @@ pub fn round(bet: i32, rounds: i32) {
         }
 
         // computer's turn
+        println!("");
         println!("It is now the computer's turn");
 
         // computer's first two cards
@@ -112,6 +113,7 @@ pub fn round(bet: i32, rounds: i32) {
         }
 
         // final comparison between player total card value and computer total card value
+        println!("");
         println!("Showdown!");
 
         // Summing up the card values
