@@ -125,6 +125,9 @@ pub fn round(bet: i32, rounds: i32) {
                 computer_sum += card;
             }
 
+            // graceful cleanup for hygiene
+            choice_string.clear();
+
             // comparing player_sum and computer_sum
             match player_sum {
                 // if is is a tie
@@ -138,6 +141,7 @@ pub fn round(bet: i32, rounds: i32) {
                     if bet != 0 {
                         println!("You neither lost or made any money")
                     }
+                    break 'gameloop;
                 }
                 // if you win
                 n if n > computer_sum => {
@@ -150,6 +154,7 @@ pub fn round(bet: i32, rounds: i32) {
                     if bet != 0 {
                         println!("You made ${}!", bet * 3);
                     }
+                    break 'gameloop;
                 }
                 // if you lose
                 _ => {
@@ -162,10 +167,9 @@ pub fn round(bet: i32, rounds: i32) {
                     if bet != 0 {
                         println!("You lost ${}", bet);
                     }
+                    break 'gameloop;
                 }
             }
-            // graceful cleanup for hygiene
-            choice_string.clear();
         }
     }
 }
