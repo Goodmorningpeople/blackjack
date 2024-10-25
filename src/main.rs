@@ -6,8 +6,8 @@ fn main() {
         .about("Blackjack cli tool that allows you to place bets")
         .subcommand(Command::new("play")
             .about("play [options]: command to start a game, options:
-bet [amount]: bet an amount of money, the amount of money you win/lose will be shown at the end of a round 
-round [number-of-rounds]: set the amount of rounds you would like to play
+--bet [amount]: bet an amount of money, the amount of money you win/lose will be shown at the end of a round 
+--round [number-of-rounds]: set the amount of rounds you would like to play
 ")
             .arg(
                 Arg::new("bet-option")
@@ -24,5 +24,5 @@ round [number-of-rounds]: set the amount of rounds you would like to play
         ).get_matches();
     
     let play_args = match_result.subcommand_matches("play");
-    match_play(play_args);
+   match_play(play_args); 
 }
